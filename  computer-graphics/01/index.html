@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>ЦДА</title>
+</head>
+<body>
+<p>
+    <label>
+        x1:
+        <input id="x1" type="number" value="2" min="0" max="39" step="1">
+    </label>
+
+    <label>
+        y1:
+        <input id="y1" type="number" value="2" min="0" max="29" step="1">
+    </label>
+
+    <label>
+        x2:
+        <input id="x2" type="number" value="20" min="0" max="39" step="1">
+    </label>
+
+    <label>
+        y2:
+        <input id="y2" type="number" value="8" min="0" max="29" step="1">
+    </label>
+
+    <button id="build" type="button">Построить</button>
+</p>
+
+<p id="message"></p>
+
+<canvas id="canvas" width="400" height="300"></canvas>
+
+<table>
+    <thead>
+    <tr>
+        <th>шаг</th>
+        <th>x</th>
+        <th>y</th>
+        <th>пиксель x</th>
+        <th>пиксель y</th>
+    </tr>
+    </thead>
+    <tbody id="steps"></tbody>
+</table>
+
+<script src="./app.js"></script>
+</body>
+</html>
