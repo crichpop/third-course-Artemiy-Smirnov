@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Брезенхем</title>
+</head>
+<body>
+<p>
+    <label>x1: <input id="x1" type="number" value="2" min="0" max="39" step="1"></label>
+    <label>y1: <input id="y1" type="number" value="2" min="0" max="29" step="1"></label>
+    <label>x2: <input id="x2" type="number" value="8" min="0" max="39" step="1"></label>
+    <label>y2: <input id="y2" type="number" value="5" min="0" max="29" step="1"></label>
+</p>
+<p>
+    <label>Алгоритм:
+        <select id="algorithm">
+            <option value="dda">ЦДА</option>
+            <option value="bres" selected>Брезенхем</option>
+        </select>
+    </label>
+    <label><input id="big" type="checkbox" checked>Увеличить пиксели</label>
+    <button id="build">Построить</button>
+</p>
+<p>Координаты: x от 0 до 39, y от 0 до 29. Начало сверху слева, y растёт вниз.</p>
+<p id="message"></p>
+<canvas id="canvas" width="400" height="300"></canvas>
+<p>Пиксели выбранного алгоритма:</p>
+<pre id="pixels"></pre>
+<p>Таблица Брезенхема для введённого отрезка (error до перехода к следующему пикселю):</p>
+<table border="1">
+    <thead><tr><th>шаг</th><th>x</th><th>y</th><th>error</th><th>error2</th><th>изменился x</th><th>изменился y</th></tr></thead>
+    <tbody id="steps"></tbody>
+</table>
+<p>Сравнение примеров:</p>
+<pre id="compare"></pre>
+<button id="test">Измерить время</button>
+<p>5 запусков по 10000 отрезков для каждого алгоритма. Измеряется построение на отдельном canvas без таблицы и списка.</p>
+<pre id="time"></pre>
+<script src="app.js"></script>
+</body>
+</html>
