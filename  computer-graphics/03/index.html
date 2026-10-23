@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Окружность по пикселям</title><link rel="stylesheet" href="style.css"><script src="app.js" defer></script>
+</head>
+<body><main>
+<header><p class="eyebrow">Компьютерная графика · Практическая работа №3</p><h1>Окружность по пикселям</h1><p>Один сектор, два возможных шага и восемь отражений.</p></header>
+<section class="panel"><form id="controls">
+<label>Центр cx<input id="cx" type="number" value="20" step="1" required></label>
+<label>Центр cy<input id="cy" type="number" value="15" step="1" required></label>
+<label>Радиус r<input id="radius" type="number" value="10" min="1" step="1" required></label>
+<button type="submit">Построить</button><button id="clear" type="button" class="secondary">Очистить</button>
+</form><p id="message" role="status" aria-live="polite"></p></section>
+<div class="layout"><section class="panel"><h2>Логическая сетка</h2><p class="hint">41 × 31 пиксель · x: 0…40, y: 0…30 · ось y направлена вниз</p>
+<label for="method">Способ построения</label><select id="method"><option value="midpoint">Алгоритм средней точки</option><option value="formula">Формула с sqrt и округлением</option></select><p class="hint">Таблица и выделение шага всегда относятся к алгоритму средней точки.</p>
+<canvas id="canvas" width="820" height="620" aria-label="Растровая окружность на координатной сетке">Для просмотра окружности нужен браузер с Canvas.</canvas>
+<div class="legend"><span>■ Окружность</span><span class="orange">■ Точки выбранного шага</span><span class="purple">■ Базовая точка</span></div>
+</section><aside class="panel"><h2>Симметрия шага</h2><label class="check"><input id="highlight" type="checkbox" checked> Выделять выбранный шаг</label>
+<label for="step">Выбранный шаг</label><input id="step" type="range" min="0" max="0" value="0"><p id="step-info"></p><ol id="points"></ol><p class="hint">На осях и диагоналях некоторые из восьми точек совпадают.</p></aside></div>
+<section class="panel"><h2>Таблица шагов</h2><p class="hint">Координаты x и y указаны относительно центра. d обновляется до изменения x и y. Нажмите строку, чтобы выделить шаг.</p><div class="table-wrap"><table><thead><tr><th>Шаг</th><th>x</th><th>y</th><th>d до</th><th>Вариант</th><th>d после</th></tr></thead><tbody id="steps"></tbody></table></div></section>
+<section class="panel"><h2>Сравнение с формулой</h2><p>Второй способ: y = round(sqrt(r² − x²)). Оба способа вычисляют один сектор и восстанавливают окружность через одну функцию симметрии.</p><button id="benchmark" type="button">Сравнить и измерить время</button><p id="bench-status" role="status" aria-live="polite">Радиусы: 1, 5, 8, 10 и радиус построенной окружности. Время измеряется без рисования.</p><div class="table-wrap"><table><thead><tr><th>r</th><th>Базовых точек<br>Midpoint / формула</th><th>Уникальных пикселей<br>Midpoint / формула</th><th>Различий</th><th>Midpoint, мс<br>медиана [мин–макс]</th><th>Формула, мс<br>медиана [мин–макс]</th></tr></thead><tbody id="comparison"></tbody></table></div><p class="hint">Время зависит от браузера, прогрева и нагрузки. Эти измерения не доказывают, что один способ быстрее во всех условиях.</p></section>
+<footer>Без ctx.arc() · Целочисленные координаты · Алгоритм средней точки</footer>
+</main></body></html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Каталог пользователей</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Каталог пользователей</h1>
+      <p class="intro">Загрузите контакты из API и найдите нужного человека.</p>
+    </header>
+    <section class="toolbar" aria-label="Управление каталогом">
+      <div class="actions">
+        <button id="load-button" type="button">Загрузить</button>
+        <button id="refresh-button" class="secondary" type="button" disabled>Обновить</button>
+      </div>
+      <label for="search">Поиск по имени, username или email</label>
+      <input id="search" type="search" placeholder="Например, Leanne или @gmail.com" autocomplete="off">
+    </section>
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+    <section id="users" class="users" aria-label="Пользователи" aria-busy="false"></section>
+    <p id="statistics" class="statistics"></p>
+  </main>
+</body>
+</html>
