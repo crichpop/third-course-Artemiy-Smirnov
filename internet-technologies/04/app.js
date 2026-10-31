@@ -62,7 +62,9 @@ async function loadPosts() {
     state.error = '';
     render();
     try {
-        const response = await fetch(url + '?_limit=10');
+        const response = await fetch(url + '?_limit=10', {
+            cache: 'no-store'
+        });
         if (!response.ok) throw new Error('HTTP ' + response.status);
         state.posts = await response.json();
     } catch (error) {
