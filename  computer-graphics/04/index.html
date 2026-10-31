@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Отсечение отрезков</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Отсечение отрезков</h1>
+<p>
+    Окно:
+    <label>xmin <input id="xmin" type="number" value="10"></label>
+    <label>ymin <input id="ymin" type="number" value="6"></label>
+    <label>xmax <input id="xmax" type="number" value="30"></label>
+    <label>ymax <input id="ymax" type="number" value="23"></label>
+</p>
+<p>
+    Отрезок:
+    <label>x1 <input id="x1" type="number" value="3"></label>
+    <label>y1 <input id="y1" type="number" value="12"></label>
+    <label>x2 <input id="x2" type="number" value="36"></label>
+    <label>y2 <input id="y2" type="number" value="18"></label>
+</p>
+<select id="mode">
+    <option value="line">Отрезок</option>
+    <option value="polyline">Ломаная</option>
+</select>
+<button id="build">Построить</button>
+<button id="experiment">100 случайных отрезков</button>
+<p id="message"></p>
+<p id="codes"></p>
+<p id="stats"></p>
+<canvas id="canvas" width="400" height="300"></canvas>
+<table border="1">
+    <thead><tr><th>Шаг</th><th>A</th><th>codeA</th><th>B</th><th>codeB</th><th>Действие</th></tr></thead>
+    <tbody id="steps"></tbody>
+</table>
+<script src="app.js"></script>
+</body>
+</html>
