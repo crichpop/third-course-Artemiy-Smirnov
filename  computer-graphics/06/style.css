@@ -1,0 +1,11 @@
+body { font-family: Arial, sans-serif; max-width: 900px; margin: 24px auto; padding: 0 16px; }
+input { width: 58px; margin-right: 10px; }
+button, select { padding: 5px; }
+canvas { border: 1px solid #bbb; max-width: 100%; }
+table { border-collapse: collapse; width: 100%; margin-top: 14px; }
+th, td { border: 1px solid #bbb; padding: 7px; text-align: left; }
+td:last-child { font-family: monospace; overflow-wrap: anywhere; }
+.original { color: #999; }
+.window { color: #c24545; }
+.result { color: #245fd2; }
+#message { color: #a22; min-height: 1.2em; }

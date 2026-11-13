@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Отсечение многоугольников</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Отсечение многоугольников</h1>
+<p>
+    Пример:
+    <select id="example">
+        <option value="concave">Невыпуклый, четыре границы</option>
+        <option value="inside">Полностью внутри</option>
+        <option value="outside">Полностью снаружи</option>
+        <option value="one">Одна граница</option>
+        <option value="two">Две границы</option>
+        <option value="four">Четыре границы</option>
+        <option value="vertex">Вершина на границе</option>
+        <option value="edge">Ребро вдоль границы</option>
+    </select>
+</p>
+<p>
+    Окно:
+    <label>xmin <input id="xmin" type="number" value="10"></label>
+    <label>xmax <input id="xmax" type="number" value="30"></label>
+    <label>ymin <input id="ymin" type="number" value="6"></label>
+    <label>ymax <input id="ymax" type="number" value="23"></label>
+    <button id="build">Построить</button>
+</p>
+<p id="message"></p>
+<p>
+    Показать этап:
+    <select id="stage">
+        <option value="0">Исходный</option>
+        <option value="1">После LEFT</option>
+        <option value="2">После RIGHT</option>
+        <option value="3">После TOP</option>
+        <option value="4" selected>После BOTTOM</option>
+    </select>
+</p>
+<canvas id="canvas" width="400" height="300"></canvas>
+<p class="legend"><span class="original">━</span> исходный контур &nbsp; <span class="window">━</span> окно &nbsp; <span class="result">━</span> выбранный этап</p>
+<table>
+    <thead><tr><th>Этап</th><th>Число вершин</th><th>Координаты</th></tr></thead>
+    <tbody id="steps"></tbody>
+</table>
+<script src="app.js"></script>
+</body>
+</html>

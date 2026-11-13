@@ -1,0 +1,17 @@
+body { font-family: Arial, sans-serif; max-width: 920px; margin: 24px auto; padding: 0 16px; }
+.controls { display: flex; flex-wrap: wrap; gap: 12px; }
+fieldset { border: 1px solid #bbb; min-width: 160px; }
+label { margin-right: 10px; white-space: nowrap; }
+input { width: 65px; margin: 4px 0; }
+textarea { vertical-align: middle; }
+button, select { padding: 5px; }
+canvas { border: 1px solid #bbb; max-width: 100%; }
+.legend { font-size: 14px; }
+.original { color: #777; }
+.transformed { color: #245fd2; }
+.center { color: #c24545; }
+#message { color: #a22; min-height: 1.2em; }
+table { border-collapse: collapse; margin-bottom: 20px; }
+th, td { border: 1px solid #bbb; padding: 6px 10px; text-align: right; }
+th:first-child, td:first-child { text-align: left; }
+#matrix td { min-width: 65px; }

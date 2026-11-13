@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Геометрические преобразования 2D</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Геометрические преобразования 2D</h1>
+<p><label for="points">Вершины (x,y), по одной на строке:</label></p>
+<textarea id="points" rows="4" cols="20">2,1
+6,1
+7,4
+3,5</textarea>
+<button id="set-points" type="button">Задать фигуру</button>
+<div class="controls">
+    <fieldset>
+        <legend>Перенос</legend>
+        <label>tx <input id="tx" type="number" step="any" value="3"></label>
+        <label>ty <input id="ty" type="number" step="any" value="0"></label>
+    </fieldset>
+    <fieldset>
+        <legend>Масштаб</legend>
+        <label>sx <input id="sx" type="number" step="any" value="1"></label>
+        <label>sy <input id="sy" type="number" step="any" value="1"></label>
+    </fieldset>
+    <fieldset>
+        <legend>Поворот</legend>
+        <label>Угол, ° <input id="angle" type="number" step="any" value="90"></label>
+        <label>cx <input id="cx" type="number" step="any" value="0"></label>
+        <label>cy <input id="cy" type="number" step="any" value="0"></label>
+    </fieldset>
+</div>
+<p>
+    <label>Порядок
+        <select id="order">
+            <option value="A">A: поворот → перенос</option>
+            <option value="B">B: перенос → поворот</option>
+        </select>
+    </label>
+    <button id="apply" type="button">Применить</button>
+    <button id="reset" type="button">Сброс</button>
+</p>
+<p id="message" role="status"></p>
+<canvas id="canvas" width="800" height="520"></canvas>
+<p class="legend"><span class="original">━</span> исходная фигура &nbsp; <span class="transformed">━</span> преобразованная &nbsp; <span class="center">●</span> центр преобразования</p>
+<h2>Итоговая матрица</h2>
+<table id="matrix" aria-label="Итоговая матрица 3 на 3"></table>
+<h2>Координаты вершин</h2>
+<table>
+    <thead><tr><th>Вершина</th><th>x исходный</th><th>y исходный</th><th>x новый</th><th>y новый</th></tr></thead>
+    <tbody id="vertices"></tbody>
+</table>
+<script src="app.js"></script>
+</body>
+</html>
