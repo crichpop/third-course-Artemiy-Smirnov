@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Каталог книг</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/app.js" defer></script>
+</head>
+<body>
+<main class="page">
+    <header class="page-header">
+        <p class="eyebrow">Лабораторная работа №7</p>
+        <h1>Каталог книг</h1>
+        <p>Добавляйте книги и отмечайте, какие из них доступны.</p>
+    </header>
+
+    <section class="panel" aria-labelledby="add-heading">
+        <h2 id="add-heading">Новая книга</h2>
+        <form id="book-form" novalidate>
+            <label for="book-title">Название</label>
+            <input id="book-title" name="title" autocomplete="off">
+            <label for="book-author">Автор</label>
+            <input id="book-author" name="author" autocomplete="off">
+            <label class="checkbox-label" for="book-available">
+                <input id="book-available" name="available" type="checkbox" checked>
+                Доступна
+            </label>
+            <button type="submit">Добавить книгу</button>
+        </form>
+    </section>
+
+    <section class="panel" aria-labelledby="list-heading">
+        <div class="list-header">
+            <h2 id="list-heading">Книги</h2>
+            <button id="refresh-button" class="secondary" type="button">Обновить</button>
+        </div>
+        <p id="message" role="status" aria-live="polite">Загрузка...</p>
+        <ul id="book-list" class="book-list"></ul>
+    </section>
+</main>
+</body>
+</html>
